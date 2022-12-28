@@ -1383,6 +1383,7 @@ void Control::_set_size(const Size2 &p_size) {
 }
 
 void Control::set_size(const Size2 &p_size, bool p_keep_offsets) {
+	ERR_FAIL_COND(isnan(p_size.x) || isnan(p_size.y));
 	Size2 new_size = p_size;
 	Size2 min = get_combined_minimum_size();
 	if (new_size.x < min.x) {
